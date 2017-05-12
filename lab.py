@@ -1,5 +1,20 @@
 from my_module import fun1, fun2
 
+
+# === dict comprehension syntax 
+    # d = {key: value for (key, value) in iterable} 
+    
+    # def key_value_gen(k):
+    #     yield chr(k+65)
+    #     yield chr((k+13)%26+65)
+
+    # for v in key_value_gen(2):
+    #     print(v)
+
+    # d = dict(map(key_value_gen, range(2)))
+    # print(d)
+# ===
+
 # === getattr built-in
     # class FunClass(object):
     #     pass

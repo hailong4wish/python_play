@@ -1,6 +1,7 @@
 import tornado.ioloop
 import tornado.web
 import tornado.httpclient
+import time
 
 class MainHandler(tornado.web.RequestHandler):
     @tornado.web.asynchronous
@@ -15,6 +16,10 @@ class MainHandler(tornado.web.RequestHandler):
         self.write("Fetched " + response.body + " entries "
                    "from the FriendFeed API")
         self.finish()
+        # print("... code continue goes...")
+        # time.sleep()
+        # print(".. until now return")
+        # return
 
 def make_app():
     return tornado.web.Application([
