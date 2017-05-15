@@ -1,9 +1,35 @@
 from my_module import fun1, fun2
 
+# === more on yield
+    # def funny_gen(count):
+    #     for i in range(count):
+    #         print("start to count.." + str(i))
+    #         yield i
+    #     yield "hey there, i'm also yield string"
+    #     print("count done!")
+    #     return 
+
+    # for val in funny_gen(3):
+    #     print(val)
+# === end
+
+#=== scope  ....
+    # class FunClass:
+    #     status = 5
+    #     def play(self):
+    #         # local variable
+    #         status = 1
+
+
+    # fun_obj = FunClass()
+    # fun_obj.play()
+    # print(FunClass.status)
+    # print(fun_obj.status)
+#=== end
 
 # === dict comprehension syntax 
     # d = {key: value for (key, value) in iterable} 
-    
+
     # def key_value_gen(k):
     #     yield chr(k+65)
     #     yield chr((k+13)%26+65)
