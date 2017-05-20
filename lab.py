@@ -1,6 +1,7 @@
 from my_module import fun1, fun2
 
 #  add a comment
+# test
 
 # === more on yield
     # def funny_gen(count):
