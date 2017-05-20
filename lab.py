@@ -1,5 +1,7 @@
 from my_module import fun1, fun2
 
+#  add a comment
+
 # === more on yield
     # def funny_gen(count):
     #     for i in range(count):
