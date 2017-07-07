@@ -1,4 +1,196 @@
+# -*- coding: utf-8 -*-
 from my_module import fun1, fun2
+from datetime import datetime
+from contextlib import contextmanager
+import numbers
+import ujson
+from datetime import datetime, timedelta
+import traceback
+import sys
+import codecs
+import time
+import string
+import requests
+import ujson
+from my_module import*
+import pprint
+import uuid
+from bson import ObjectId, errors
+
+p = pprint.PrettyPrinter().pprint
+
+class MyClass(object):
+    @classmethod
+    def _fun1(cls):
+        print 'from cfun1'
+
+    # just convention
+    def _fun1(self):
+        print 'from _fun1'
+
+    # name mangle
+    def __fun2(self):
+        print 'from __fun2'
+
+o = MyClass()
+# p(dir(o))
+o._fun1()
+#  o.__fun2()
+o._MyClass__fun2()
+
+
+# f = MyClass._fun1
+# f2 = o._fun1
+# f(o)
+# f2()
+# MyClass._fun1()
+print MyClass._fun1 is o._fun1
+
+print MyClass._fun1
+print o._fun1
+
+# fc = MyClass._cfun1
+# f = MyClass.__fun2
+
+
+
+
+
+# a = {u'weight': u'1', u'sender_name': u'aqq', u'declared_value': u'1', u'product_url': u'', u'sender_phone_number': u'123456789', u'product_count': u'2', u'receiver_address': u'hl', u'receiver_country': u'Germany', u'sender_address': u'aqq', u'receiver_city': u'hl', u'sender_city': u'aqq', u'user_defined': u'', u'receiver_address_local': u'', u'receiver_province_local': u'', u'receiver_province': u'hl', u'receiver_city_local': u'', u'collection_option': u'1', u'receiver_country_local': u'', u'receiver_name_local': u'', u'registered': u'true', u'product_detailed_name': u'other', u'wish_transaction_value': u'', u'product_name_chinese': u'\u4e1c\u897f', u'product_country_of_origin': u'china', u'wish_transaction_id': u'592f762aa07ccd5542cae070', u'sender_address_book': u'0', u'has_battery': u'', u'package_type': u'1', u'receiver_zip_code': u'20044', u'sender_province': u'aqq', u'receiver_name': u'hlcao', u'receiver_phone_number': u'123455'}
+# p = pprint.PrettyPrinter()
+# p.pprint(a)
+ 
+#     n = "n is a nubmer"
+#     # raise "some errror"
+#     print n
+# except Exception as e:
+#     print 'exp handling...'
+#     raise 'New Error'
+# finally:
+#     print "finnally procesing.."
+
+
+# print " s".strip().lower() == "S".lower()
+
+
+# l = [1, 2, 3]
+# l.append(6)
+# print list.__class__
+
+
+# merchant_url = "https://merchant.wish.com"
+ 
+# url = merchant_url + \
+#            '/api/v1/wishpost/get_orders_by_transaction_ids?key=JHBia2RmMiQxMDAkb0RRRzRIeVAwZnBmSzZXVWNvNFJvZyRhL0tERkxCbEtNaXZQdi55TDRoS2I0YWJjZVk='
+
+# headers = {
+#     'content-type': 'application/json',
+# }
+# transaction_ids = ['590ad53a676951413cb683ee']
+
+# # payload = ','.join(transaction_ids)
+
+# payload = '590ad53a676951413cb683ee'
+
+# print payload
+# resp = requests.post(
+#     url=url,
+#     headers=headers,
+#     data=payload,
+#     timeout=60
+# )
+
+ 
+# # 200
+# print ujson.loads(resp._content)
+
+
+
+
+
+
+
+# t_jsn = ujson.dumps(temp)
+# print(t_jsn)
+ 
+
+# === lambda
+    # string = "ab cd ef"
+    # lbd = lambda s: "--".join(s.split())
+    # lbd(string)
+# === end
+
+# print(len(s.ljust(30))
+
+#  === it is pretty coll
+    # def pp_log(log_str, tag=""):
+    #     @contextmanager
+    #     def print_log(tag):
+    #         hr = "-------" + tag + "----------"
+    #         print(hr)
+    #         yield
+    #         print(hr)
+
+    #     with print_log(tag):
+    #         print(log_str)
+#  === end
+
+# ==== magic trick
+    # @contextmanager
+    # def funny_wrap():
+    #     hr = "================"
+    #     print(hr)
+    #     yield
+    #     print(hr)
+# ==== end
+
+# with funny_wrap():
+#     print("notice!")
+
+# d = datetime.strptime('2012-03-01T10:00:00.000Z','%Y-%m-%dT%H:%M:%S.%fZ')
+# print(d)
+
+# =====  basic function
+# class Parent(object):
+#     tag1 = "tag1"
+#     tag2 = "tag2"
+
+
+# class Son(Parent):
+#     tag3 = "tag3"
+#     def __init__(self, *args, **kwargs):
+#         print(args)
+#         print(kwargs)
+
+#     # def play(self, str):
+#     #     print(str)
+
+#     #  no overloading, just overwrite
+#     def play(self, str, str2):
+#         print(str)
+#         print(str2)
+    
+
+
+# Son(name='hlcao', age = 31)
+# s = Son({'name':'hlcao', 'age': 31})
+# # s.play(str="good dog")
+# s.play(str="good dog", str2="good taste")
+# print(isinstance([], list))
+
+# ==== end
+
+# === built in method
+    # class MyClass:
+    #     meta = {"name": "hlcao"}
+    #     pass
+
+    # print(MyClass.__dict__)
+    # print(MyClass.__dict__["meta"])
+    # print(dir(MyClass))
+    # obj = MyClass()
+    # print(obj.__class__)
+# ===
 
 #  add a comment
 # test
@@ -211,3 +403,35 @@ from my_module import fun1, fun2
     #     print(i)
 # === end
 
+
+
+
+# t_now = datetime(2017, 6, 1)
+# print(t_now)
+# t_o = datetime(1970, 1, 1)
+# print( (t_now - t_o).total_seconds() )
+# p = {"name": 'hlcao'}
+
+
+
+# try:
+#     raise Exception("something wrong")
+# except Exception as e:
+#     print(e.message)
+#     print(traceback.format_exc())
+    # exc_info = sys.exc_info()
+    # job_error = exc_info[1]
+    # trace_back = exc_info[2]
+    # print(job_error)
+    # print(traceback.format_exc())
+    # print("----")
+    # exc_type, exc_value, exc_traceback = sys.exc_info()
+    # print "*** print_tb:"
+    # traceback.print_tb(exc_traceback, limit=1, file=sys.stdout)
+    # print "*** print_exception:"
+    # traceback.print_exception(exc_type, exc_value, exc_traceback,
+    #                           limit=2, file=sys.stdout)
+    # print "*** print_exc:"
+    # traceback.print_exc()
+    # print "--- end --- "
+    # traceback.print_exc()
